@@ -4,13 +4,14 @@ interface ConditionalProps {
   message?: string;
 }
 
-const ConditionalComponent: React.FC<ConditionalProps> = ({ message }) => {
+function ConditionalComponent({ message }: ConditionalProps) {
   return (
     <div>
-      <h2>Conditional Rendering</h2>
+      <h2>Conditional Component</h2>
       {message && <p>{message}</p>}
+      {!message && <p>No message available</p>}
     </div>
   );
-};
+}
 
 export default ConditionalComponent;
